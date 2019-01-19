@@ -1,0 +1,29 @@
+
+<!doctype html>
+<title>Upload new File</title>
+    <h1>上传植物特性表</h1>
+<form action="" method=post enctype=multipart/form-data>
+  <p><input type=file name=file1>
+     <input type=submit value=Upload>
+</form>
+{% if filename and flag==1%}
+    <td align="right">{{filename}}</td>
+    <td align="left">
+        <button type="button"><a href="{{ url_for('download', filename=filename) }}">下载</a></button>
+    </td>
+{% endif %}
+
+
+
+    <h1>上传病症表</h1>
+<form action="" method=post enctype=multipart/form-data>
+  <p><input type=file name=file2>
+     <input type=submit value=Upload>
+</form>
+
+{% if filename and flag==0%}
+    <td align="right">{{filename}}</td>
+    <td align="left">
+        <button type="button"><a href="{{ url_for('download', filename=filename) }}">下载</a></button>
+    </td>
+{% endif %}
